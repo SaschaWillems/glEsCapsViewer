@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/action_upload"
+        android:icon="@drawable/ic_avupload"
+        android:showAsAction="always"
+        android:title="Upload report"/>
+    <item android:id="@+id/action_about"
+        android:icon="@drawable/ic_actionabout"
+        android:title="About"
+        android:showAsAction="always"/>
+</menu>

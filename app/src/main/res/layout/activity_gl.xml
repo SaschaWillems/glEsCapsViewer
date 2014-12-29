@@ -1,0 +1,43 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    
+    <!-- Here is where we put the SurfaceView, in a frame so that we can
+         stack other views on top of it. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0px"
+        android:layout_weight="1">
+
+        <de.saschawillems.glescapsviewer.MyGLSurfaceView android:id="@+id/glsurfaceview"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ScrollView
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical"
+            android:layout_weight="1">
+
+            <LinearLayout android:id="@+id/hidecontainer"
+                android:orientation="vertical"
+                android:visibility="visible"
+                android:gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableLayout
+                    android:id="@+id/tableLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" >
+                </TableLayout>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </FrameLayout> 
+
+</LinearLayout> 
+
+

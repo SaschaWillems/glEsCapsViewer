@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">OpenGL ES Hardware Caps Viewer</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_gl">OpenGL ES Hardware Caps Viewer</string>
+    <string name="about_credits">Version 0.3\n\nCopyright © 2013-2014 by Sascha Willems\n\nhttp://www.saschawillems.de\nhttp://opengles.delphigl.de\n\nOpenGL is a registered trademark and the OpenGL ES logo is a trademark of Silicon Graphics Inc. used by permission by Khronos. </string>
+
+</resources>
