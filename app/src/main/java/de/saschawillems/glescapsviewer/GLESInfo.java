@@ -405,8 +405,101 @@ class GLESInfo {
 		case 0x9138:
 			mFormatName = "COMPRESSED_RGBA_PVRTC_4BPPV2_IMG";
 			break;
-									
-			
+
+        // ES3.0 formats
+        case GL_COMPRESSED_R11_EAC :
+            mFormatName = "GL_COMPRESSED_R11_EAC";
+            break;
+        case GL_COMPRESSED_SIGNED_R11_EAC :
+            mFormatName = "GL_COMPRESSED_SIGNED_R11_EAC";
+            break;
+        case GL_COMPRESSED_RG11_EAC :
+            mFormatName = "GL_COMPRESSED_RG11_EAC";
+            break;
+        case GL_COMPRESSED_SIGNED_RG11_EAC :
+            mFormatName = "GL_COMPRESSED_SIGNED_RG11_EAC";
+            break;
+        case GL_COMPRESSED_RGB8_ETC2 :
+            mFormatName = "GL_COMPRESSED_RGB8_ETC2";
+            break;
+        case GL_COMPRESSED_SRGB8_ETC2 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ETC2";
+            break;
+        case GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 :
+            mFormatName = "GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2";
+            break;
+        case GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 :
+            mFormatName = "GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2";
+            break;
+        case GL_COMPRESSED_RGBA8_ETC2_EAC :
+            mFormatName = "GL_COMPRESSED_RGBA8_ETC2_EAC";
+            break;
+        case GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC";
+            break;
+
+        // GL_OES_texture_compression_astc
+        case 0x93C0 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_3x3x3_OES";
+            break;
+        case 0x93C1 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_4x3x3_OES";
+            break;
+        case 0x93C2 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_4x4x3_OES";
+            break;
+        case 0x93C3 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_4x4x4_OES";
+            break;
+        case 0x93C4 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_5x4x4_OES";
+            break;
+        case 0x93C5 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_5x5x4_OES";
+            break;
+        case 0x93C6 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_5x5x5_OES";
+            break;
+        case 0x93C7 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_6x5x5_OES";
+            break;
+        case 0x93C8 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_6x6x5_OES";
+            break;
+        case 0x93C9 :
+            mFormatName = "GL_COMPRESSED_RGBA_ASTC_6x6x6_OES";
+            break;
+        case 0x93E0 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_3x3x3_OES";
+            break;
+        case 0x93E1 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x3x3_OES";
+            break;
+        case 0x93E2 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x3_OES";
+            break;
+        case 0x93E3 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4x4_OES";
+            break;
+        case 0x93E4 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4x4_OES";
+            break;
+        case 0x93E5 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x4_OES";
+            break;
+        case 0x93E6 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5x5_OES";
+            break;
+        case 0x93E7 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5x5_OES";
+            break;
+        case 0x93E8 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x5_OES";
+            break;
+        case 0x93E9 :
+            mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6x6_OES";
+            break;
+
 		default:
 			mFormatName = "0x" + Integer.toHexString(Enum);
 		}
