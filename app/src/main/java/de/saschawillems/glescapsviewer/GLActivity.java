@@ -52,6 +52,8 @@ public class GLActivity extends Activity implements PropertyChangeListener {
 	
     public static GLESInfo mGLESInfo;
     private GLES20Renderer mRenderer;
+
+    public static String baseURL = "http://opengles.gpuinfo.org";
     
     private Context mContext;
      
@@ -158,14 +160,14 @@ public class GLActivity extends Activity implements PropertyChangeListener {
             
             String paramString = URLEncoder.encode(mGLESInfo.deviceDescription(), "utf-8");          
             
-			URL url = new URL("http://www.delphigl.de/glcapsviewer/gles_checkreport.php?description=" + paramString);
+			URL url = new URL(baseURL + "/gles_checkreport.php?description=" + paramString);
 			HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             int serverResponseCode = conn.getResponseCode();
             String serverResponseMessage = conn.getResponseMessage();
 
             String[] responsePart = serverResponseMessage.split(" ");
             if (responsePart[0].equals("report_present")) {
-            	return "http://delphigl.de/glcapsviewer/gles_generatereport.php?reportID=" + responsePart[1];
+            	return baseURL + "/gles_generatereport.php?reportID=" + responsePart[1];
             } else {
             	return "";
             }
@@ -213,7 +215,7 @@ public class GLActivity extends Activity implements PropertyChangeListener {
 	                        StrictMode.setThreadPolicy(policy);
 	
 	
-	                        URL url = new URL("http://www.delphigl.de/glcapsviewer/gles_uploadreport.php");
+	                        URL url = new URL(baseURL + "/gles_uploadreport.php");
 	
 	                        HttpURLConnection conn = null;
 	                        DataOutputStream dos = null;
@@ -298,7 +300,7 @@ public class GLActivity extends Activity implements PropertyChangeListener {
     }
     
     private void showDatabase() {
-    	Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://opengles.delphigl.de/")); 
+    	Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(baseURL));
     	startActivity(intent);
     }
         

@@ -211,58 +211,58 @@ class GLESInfo {
 		
 		//GL_AMD_compressed_3DC_texture
 		case 0x87F9:
-			mFormatName = "3DC_X_AMD";
+			mFormatName = "GL_3DC_X_AMD";
 			break;
 		case 0x87FA:
-			mFormatName = "3DC_XY_AMD";
+			mFormatName = "GL_3DC_XY_AMD";
 			break;
 	
 		// GL_AMD_compressed_ATC_texture
 		case 0x8C92:
-			mFormatName = "ATC_RGB_AMD";
+			mFormatName = "GL_ATC_RGB_AMD";
 			break;
 		case 0x8C93:
-			mFormatName = "ATC_RGBA_EXPLICIT_ALPHA_AMD";
+			mFormatName = "GL_ATC_RGBA_EXPLICIT_ALPHA_AMD";
 			break;
 		case 0x87EE:
-			mFormatName = "ATC_RGBA_INTERPOLATED_ALPHA_AMD";
+			mFormatName = "GL_ATC_RGBA_INTERPOLATED_ALPHA_AMD";
 			break;
 			
 		// GL_OES_compressed_ETC1_RGB8_texture
 		case 0x8D64:
-			mFormatName = "ETC1_RGB8_OES";
+			mFormatName = "GL_ETC1_RGB8_OES";
 			break;
 			
 		// GL_OES_compressed_paletted_texture        
 		case 0x8B90: 
-			mFormatName = "PALETTE4_RGB8_OES";
+			mFormatName = "GL_PALETTE4_RGB8_OES";
 			break;         
         case 0x8B91: 
-        	mFormatName = "PALETTE4_RGBA8_OES";
+        	mFormatName = "GL_PALETTE4_RGBA8_OES";
 			break;                 
         case 0x8B92: 
-        	mFormatName = "PALETTE4_R5_G6_B5_OES";
+        	mFormatName = "GL_PALETTE4_R5_G6_B5_OES";
 			break;              
         case 0x8B93: 
-        	mFormatName = "PALETTE4_RGBA4_OES";
+        	mFormatName = "GL_PALETTE4_RGBA4_OES";
 			break;                 
         case 0x8B94: 
-        	mFormatName = "PALETTE4_RGB5_A1_OES";
+        	mFormatName = "GL_PALETTE4_RGB5_A1_OES";
 			break;               
         case 0x8B95: 
-        	mFormatName = "PALETTE8_RGB8_OES";
+        	mFormatName = "GL_PALETTE8_RGB8_OES";
 			break;                  
         case 0x8B96: 
-        	mFormatName = "PALETTE8_RGBA8_OES";
+        	mFormatName = "GL_PALETTE8_RGBA8_OES";
 			break;                 
         case 0x8B97: 
-        	mFormatName = "PALETTE8_R5_G6_B5_OES";
+        	mFormatName = "GL_PALETTE8_R5_G6_B5_OES";
 			break;              
         case 0x8B98: 
-        	mFormatName = "PALETTE8_RGBA4_OES";
+        	mFormatName = "GL_PALETTE8_RGBA4_OES";
 			break;                 
         case 0x8B99: 
-        	mFormatName = "PALETTE8_RGB5_A1_OES";
+        	mFormatName = "GL_PALETTE8_RGB5_A1_OES";
 			break;    
 			
 		// GL_EXT_texture_compression_dxt1 
@@ -270,171 +270,171 @@ class GLESInfo {
 		// GL_NV_texture_compression_s3tc
 		// GL_EXT_texture_compression_s3tc
         case 0x83F0: 
-        	mFormatName = "COMPRESSED_RGB_S3TC_DXT1";
+        	mFormatName = "GL_COMPRESSED_RGB_S3TC_DXT1";
 			break;    
         case 0x83F1: 
-        	mFormatName = "COMPRESSED_RGBA_S3TC_DXT1";
+        	mFormatName = "GL_COMPRESSED_RGBA_S3TC_DXT1";
 			break;    
         case 0x83F2: 
-        	mFormatName = "OMPRESSED_RGBA_S3TC_DXT3";
+        	mFormatName = "GL_OMPRESSED_RGBA_S3TC_DXT3";
 			break;    
         case 0x83F3: 
-        	mFormatName = "COMPRESSED_RGBA_S3TC_DXT5";
+        	mFormatName = "GL_COMPRESSED_RGBA_S3TC_DXT5";
 			break;    
 			
 		// GL_IMG_texture_compression_pvrtc
         case 0x8C00: 
-        	mFormatName = "COMPRESSED_RGB_PVRTC_4BPPV1_IMG";
+        	mFormatName = "GL_COMPRESSED_RGB_PVRTC_4BPPV1_IMG";
 			break;    						
         case 0x8C01: 
-        	mFormatName = "COMPRESSED_RGB_PVRTC_2BPPV1_IMG";
+        	mFormatName = "GL_COMPRESSED_RGB_PVRTC_2BPPV1_IMG";
 			break;    						
         case 0x8C02: 
-        	mFormatName = "COMPRESSED_RGBA_PVRTC_4BPPV1_IMG";
+        	mFormatName = "GL_COMPRESSED_RGBA_PVRTC_4BPPV1_IMG";
 			break;    						
         case 0x8C03: 
-        	mFormatName = "COMPRESSED_RGBA_PVRTC_2BPPV1_IMG";
+        	mFormatName = "GL_COMPRESSED_RGBA_PVRTC_2BPPV1_IMG";
 			break;    	
 			
 		// GL_KHR_texture_compression_astc_hdr
 	    // GL_KHR_texture_compression_astc_ldr
 			
         case 0x93B0:
-        	mFormatName = "COMPRESSED_RGBA_ASTC_4x4_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_4x4_KHR";
 			break;            
         case 0x93B1:
-        	mFormatName = "COMPRESSED_RGBA_ASTC_5x4_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_5x4_KHR";
 			break;            
         case 0x93B2:
-        	mFormatName = "COMPRESSED_RGBA_ASTC_5x5_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_5x5_KHR";
 			break;           
         case 0x93B3:
-        	mFormatName = "COMPRESSED_RGBA_ASTC_6x5_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_6x5_KHR";
 			break;           
         case 0x93B4:
-        	mFormatName = "COMPRESSED_RGBA_ASTC_6x6_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_6x6_KHR";
 			break;       
         case 0x93B5:
-        	mFormatName = "COMPRESSED_RGBA_ASTC_8x5_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_8x5_KHR";
 			break;            
         case 0x93B6:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_8x6_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_8x6_KHR";
 			break;            
         case 0x93B7:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_8x8_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_8x8_KHR";
 			break;            
         case 0x93B8:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_10x5_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_10x5_KHR";
 			break;           
         case 0x93B9:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_10x6_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_10x6_KHR";
 			break;           
         case 0x93BA:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_10x8_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_10x8_KHR";
 			break;           
         case 0x93BB:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_10x10_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_10x10_KHR";
 			break;          
         case 0x93BC:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_12x10_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_12x10_KHR";
 			break;          
         case 0x93BD:	
-        	mFormatName = "COMPRESSED_RGBA_ASTC_12x12_KHR";
+        	mFormatName = "GL_COMPRESSED_RGBA_ASTC_12x12_KHR";
 			break;          
         case 0x93D0:
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_4x4_KHR";
 			break;   
         case 0x93D1:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x4_KHR";
 			break;    
         case 0x93D2:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_5x5_KHR";
 			break;   
         case 0x93D3:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x5_KHR";
 			break;    
         case 0x93D4:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_6x6_KHR";
 			break;    
         case 0x93D5:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x5_KHR";
 			break;    
         case 0x93D6:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x6_KHR";
 			break;    
         case 0x93D7:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_8x8_KHR";
 			break;    
         case 0x93D8:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x5_KHR";
 			break;   
         case 0x93D9:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x6_KHR";
 			break;   
         case 0x93DA:	
-        	mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR";
+        	mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x8_KHR";
 			break;   
 		case 0x93DB:	
-			mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR";
+			mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_10x10_KHR";
 			break;  
 		case 0x93DC:
-			mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR";
+			mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x10_KHR";
 			break;  
 		case 0x93DD:	
-			mFormatName = "COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR";
+			mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ASTC_12x12_KHR";
 			break;
 			
 		// GL_NV_texture_compression_latc
 		case 0x8C70:
-			mFormatName = "COMPRESSED_LUMINANCE_LATC1_NV";
+			mFormatName = "GL_COMPRESSED_LUMINANCE_LATC1_NV";
 			break;                   
 		case 0x8C71:
-			mFormatName = "COMPRESSED_SIGNED_LUMINANCE_LATC1_NV";
+			mFormatName = "GL_COMPRESSED_SIGNED_LUMINANCE_LATC1_NV";
 			break;            
 		case 0x8C72:
-			mFormatName = "COMPRESSED_LUMINANCE_ALPHA_LATC2_NV";
+			mFormatName = "GL_COMPRESSED_LUMINANCE_ALPHA_LATC2_NV";
 			break;
 		case 0x8C73:
-			mFormatName = "COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_NV";
+			mFormatName = "GL_COMPRESSED_SIGNED_LUMINANCE_ALPHA_LATC2_NV";
 			break;
 			
 		// GL_IMG_texture_compression_pvrtc2	
 		case 0x9137:
-			mFormatName = "COMPRESSED_RGBA_PVRTC_2BPPV2_IMG";
+			mFormatName = "GL_COMPRESSED_RGBA_PVRTC_2BPPV2_IMG";
 			break;
 		case 0x9138:
-			mFormatName = "COMPRESSED_RGBA_PVRTC_4BPPV2_IMG";
+			mFormatName = "GL_COMPRESSED_RGBA_PVRTC_4BPPV2_IMG";
 			break;
 
         // ES3.0 formats
-        case GL_COMPRESSED_R11_EAC :
+        case GLES30.GL_COMPRESSED_R11_EAC :
             mFormatName = "GL_COMPRESSED_R11_EAC";
             break;
-        case GL_COMPRESSED_SIGNED_R11_EAC :
+        case GLES30.GL_COMPRESSED_SIGNED_R11_EAC :
             mFormatName = "GL_COMPRESSED_SIGNED_R11_EAC";
             break;
-        case GL_COMPRESSED_RG11_EAC :
+        case GLES30.GL_COMPRESSED_RG11_EAC :
             mFormatName = "GL_COMPRESSED_RG11_EAC";
             break;
-        case GL_COMPRESSED_SIGNED_RG11_EAC :
+        case GLES30.GL_COMPRESSED_SIGNED_RG11_EAC :
             mFormatName = "GL_COMPRESSED_SIGNED_RG11_EAC";
             break;
-        case GL_COMPRESSED_RGB8_ETC2 :
+        case GLES30.GL_COMPRESSED_RGB8_ETC2 :
             mFormatName = "GL_COMPRESSED_RGB8_ETC2";
             break;
-        case GL_COMPRESSED_SRGB8_ETC2 :
+        case GLES30.GL_COMPRESSED_SRGB8_ETC2 :
             mFormatName = "GL_COMPRESSED_SRGB8_ETC2";
             break;
-        case GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 :
+        case GLES30.GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2 :
             mFormatName = "GL_COMPRESSED_RGB8_PUNCHTHROUGH_ALPHA1_ETC2";
             break;
-        case GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 :
+        case GLES30.GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2 :
             mFormatName = "GL_COMPRESSED_SRGB8_PUNCHTHROUGH_ALPHA1_ETC2";
             break;
-        case GL_COMPRESSED_RGBA8_ETC2_EAC :
+        case GLES30.GL_COMPRESSED_RGBA8_ETC2_EAC :
             mFormatName = "GL_COMPRESSED_RGBA8_ETC2_EAC";
             break;
-        case GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC :
+        case GLES30.GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC :
             mFormatName = "GL_COMPRESSED_SRGB8_ALPHA8_ETC2_EAC";
             break;
 
