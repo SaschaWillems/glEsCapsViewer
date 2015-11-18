@@ -1,13 +1,13 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 18
+    compileSdkVersion 21
     buildToolsVersion "21.1.2"
 
     defaultConfig {
         applicationId "de.saschawillems.glescapsviewer"
         minSdkVersion 11
-        targetSdkVersion 16
+        targetSdkVersion 21
     }
 
     buildTypes {
