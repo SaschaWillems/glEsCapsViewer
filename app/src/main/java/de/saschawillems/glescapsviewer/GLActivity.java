@@ -22,9 +22,11 @@ package de.saschawillems.glescapsviewer;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.UiModeManager;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.opengl.GLSurfaceView;
 import android.os.Bundle;
@@ -73,8 +75,22 @@ public class GLActivity extends Activity implements PropertyChangeListener {
 	
 		mGLSurfaceView.setRenderer(mRenderer);
 	    mGLSurfaceView.setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
-	    
-	}
+
+        UiModeManager uiModeManager = (UiModeManager) getSystemService(UI_MODE_SERVICE);
+        if (uiModeManager.getCurrentModeType() == Configuration.UI_MODE_TYPE_TELEVISION)
+            findViewById(R.id.buttoncontainer).setVisibility(View.VISIBLE);
+
+        findViewById(R.id.uploadButton).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                uploadReport();
+            }
+        });
+        findViewById(R.id.aboutButton).setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                showAbout();
+            }
+        });
+    }
 	
 	
 	@Override
