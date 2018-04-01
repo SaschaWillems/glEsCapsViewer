@@ -2,7 +2,7 @@
 *
 * OpenGL ES hardware capability viewer and database
 *
-* Copyright (C) 2011-2015 by Sascha Willems (www.saschawillems.de)
+* Copyright (C) 2011-2018 by Sascha Willems (www.saschawillems.de)
 *
 * This code is free software, you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -28,6 +28,7 @@ import android.hardware.SensorManager;
 import android.opengl.EGL14;
 import android.opengl.GLES20;
 import android.opengl.GLES30;
+import android.opengl.GLES31;
 import android.util.Xml;
 import android.view.Display;
 
@@ -106,6 +107,22 @@ class EGLConfigInfo {
 	
 }
 
+class ESCaps {
+	public List<String> names;
+	public List<String> displayNames;
+	public List<String> values;
+    public ESCaps() {
+        names = new ArrayList<>();
+        displayNames = new ArrayList<>();
+        values = new ArrayList<>();
+    }
+	public void add(String name, String displayName, String value) {
+		names.add(name);
+		displayNames.add(displayName);
+		values.add(value);
+	}
+}
+
 class GLESInfo {
 	public String mRenderer = "none";
 	public String mVersion = "none";
@@ -121,6 +138,7 @@ class GLESInfo {
 	public List<String> mGLES30CapsDisplayName;
 	public List<String> mGLES30CapsName;
 	public List<String> mGLES30CapsValue;
+	public ESCaps mGLES31Caps;
 	public List<String> mGLCompressedFormats;
 	public List<String> mGLShaderBinaryFormats;
 	public List<String> mGLProgramBinaryFormats;
@@ -161,6 +179,8 @@ class GLESInfo {
 		mGLCompressedFormats = new ArrayList<String>();
 		mGLShaderBinaryFormats = new ArrayList<String>();
 		mGLProgramBinaryFormats = new ArrayList<String>();
+
+		mGLES31Caps = new ESCaps();
     }
     
     // Extract major and minor OpenGL ES version from version string (which may contain additional version numbers and info)
@@ -276,7 +296,7 @@ class GLESInfo {
         	mFormatName = "GL_COMPRESSED_RGBA_S3TC_DXT1";
 			break;    
         case 0x83F2: 
-        	mFormatName = "GL_OMPRESSED_RGBA_S3TC_DXT3";
+        	mFormatName = "GL_COMPRESSED_RGBA_S3TC_DXT3";
 			break;    
         case 0x83F3: 
         	mFormatName = "GL_COMPRESSED_RGBA_S3TC_DXT5";
@@ -792,6 +812,170 @@ class GLESInfo {
 		}	
 				
 	}
+
+	public void getOpenGLES31Caps() {
+
+		final int[] enums = {
+				GLES31.GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS,
+				GLES31.GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE,
+				GLES31.GL_MAX_COLOR_TEXTURE_SAMPLES,
+				GLES31.GL_MAX_COMBINED_ATOMIC_COUNTERS,
+				GLES31.GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS,
+				GLES31.GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS,
+				GLES31.GL_MAX_COMBINED_IMAGE_UNIFORMS,
+				GLES31.GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES,
+				GLES31.GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS,
+				GLES31.GL_MAX_COMPUTE_ATOMIC_COUNTERS,
+				GLES31.GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS,
+				GLES31.GL_MAX_COMPUTE_IMAGE_UNIFORMS,
+				GLES31.GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS,
+				GLES31.GL_MAX_COMPUTE_SHARED_MEMORY_SIZE,
+				GLES31.GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS,
+				GLES31.GL_MAX_COMPUTE_UNIFORM_BLOCKS,
+				GLES31.GL_MAX_COMPUTE_UNIFORM_COMPONENTS,
+				GLES31.GL_MAX_COMPUTE_WORK_GROUP_COUNT,
+				GLES31.GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS,
+				GLES31.GL_MAX_COMPUTE_WORK_GROUP_SIZE,
+				GLES31.GL_MAX_DEPTH_TEXTURE_SAMPLES,
+				GLES31.GL_MAX_FRAGMENT_ATOMIC_COUNTERS,
+				GLES31.GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS,
+				GLES31.GL_MAX_FRAGMENT_IMAGE_UNIFORMS,
+				GLES31.GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS,
+				GLES31.GL_MAX_FRAMEBUFFER_HEIGHT,
+				GLES31.GL_MAX_FRAMEBUFFER_SAMPLES,
+				GLES31.GL_MAX_FRAMEBUFFER_WIDTH,
+				GLES31.GL_MAX_IMAGE_UNITS,
+				GLES31.GL_MAX_INTEGER_SAMPLES,
+				GLES31.GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET,
+				GLES31.GL_MAX_SAMPLE_MASK_WORDS,
+				GLES31.GL_MAX_SHADER_STORAGE_BLOCK_SIZE,
+				GLES31.GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS,
+				GLES31.GL_MAX_UNIFORM_LOCATIONS,
+				GLES31.GL_MAX_VERTEX_ATOMIC_COUNTERS,
+				GLES31.GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS,
+				GLES31.GL_MAX_VERTEX_ATTRIB_BINDINGS,
+				GLES31.GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET,
+				GLES31.GL_MAX_VERTEX_ATTRIB_STRIDE,
+				GLES31.GL_MAX_VERTEX_IMAGE_UNIFORMS,
+				GLES31.GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS
+		};
+
+		final String[] capDisplayNames = {
+				// TODO
+				"GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS",
+				"GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE",
+				"GL_MAX_COLOR_TEXTURE_SAMPLES",
+				"GL_MAX_COMBINED_ATOMIC_COUNTERS",
+				"GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS",
+				"GL_MAX_COMBINED_IMAGE_UNIFORMS",
+				"GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES",
+				"GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS",
+				"GL_MAX_COMPUTE_ATOMIC_COUNTERS",
+				"GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_COMPUTE_IMAGE_UNIFORMS",
+				"GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS",
+				"GL_MAX_COMPUTE_SHARED_MEMORY_SIZE",
+				"GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS",
+				"GL_MAX_COMPUTE_UNIFORM_BLOCKS",
+				"GL_MAX_COMPUTE_UNIFORM_COMPONENTS",
+				"GL_MAX_COMPUTE_WORK_GROUP_COUNT",
+				"GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS",
+				"GL_MAX_COMPUTE_WORK_GROUP_SIZE",
+				"GL_MAX_DEPTH_TEXTURE_SAMPLES",
+				"GL_MAX_FRAGMENT_ATOMIC_COUNTERS",
+				"GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_FRAGMENT_IMAGE_UNIFORMS",
+				"GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS",
+				"GL_MAX_FRAMEBUFFER_HEIGHT",
+				"GL_MAX_FRAMEBUFFER_SAMPLES",
+				"GL_MAX_FRAMEBUFFER_WIDTH",
+				"GL_MAX_IMAGE_UNITS",
+				"GL_MAX_INTEGER_SAMPLES",
+				"GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET",
+				"GL_MAX_SAMPLE_MASK_WORDS",
+				"GL_MAX_SHADER_STORAGE_BLOCK_SIZE",
+				"GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS",
+				"GL_MAX_UNIFORM_LOCATIONS",
+				"GL_MAX_VERTEX_ATOMIC_COUNTERS",
+				"GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_VERTEX_ATTRIB_BINDINGS",
+				"GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET",
+				"GL_MAX_VERTEX_ATTRIB_STRIDE",
+				"GL_MAX_VERTEX_IMAGE_UNIFORMS",
+				"GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS"
+		};
+
+		final String[] capNames = {
+				"GL_MAX_ATOMIC_COUNTER_BUFFER_BINDINGS",
+				"GL_MAX_ATOMIC_COUNTER_BUFFER_SIZE",
+				"GL_MAX_COLOR_TEXTURE_SAMPLES",
+				"GL_MAX_COMBINED_ATOMIC_COUNTERS",
+				"GL_MAX_COMBINED_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_COMBINED_COMPUTE_UNIFORM_COMPONENTS",
+				"GL_MAX_COMBINED_IMAGE_UNIFORMS",
+				"GL_MAX_COMBINED_SHADER_OUTPUT_RESOURCES",
+				"GL_MAX_COMBINED_SHADER_STORAGE_BLOCKS",
+				"GL_MAX_COMPUTE_ATOMIC_COUNTERS",
+				"GL_MAX_COMPUTE_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_COMPUTE_IMAGE_UNIFORMS",
+				"GL_MAX_COMPUTE_SHADER_STORAGE_BLOCKS",
+				"GL_MAX_COMPUTE_SHARED_MEMORY_SIZE",
+				"GL_MAX_COMPUTE_TEXTURE_IMAGE_UNITS",
+				"GL_MAX_COMPUTE_UNIFORM_BLOCKS",
+				"GL_MAX_COMPUTE_UNIFORM_COMPONENTS",
+				"GL_MAX_COMPUTE_WORK_GROUP_COUNT",
+				"GL_MAX_COMPUTE_WORK_GROUP_INVOCATIONS",
+				"GL_MAX_COMPUTE_WORK_GROUP_SIZE",
+				"GL_MAX_DEPTH_TEXTURE_SAMPLES",
+				"GL_MAX_FRAGMENT_ATOMIC_COUNTERS",
+				"GL_MAX_FRAGMENT_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_FRAGMENT_IMAGE_UNIFORMS",
+				"GL_MAX_FRAGMENT_SHADER_STORAGE_BLOCKS",
+				"GL_MAX_FRAMEBUFFER_HEIGHT",
+				"GL_MAX_FRAMEBUFFER_SAMPLES",
+				"GL_MAX_FRAMEBUFFER_WIDTH",
+				"GL_MAX_IMAGE_UNITS",
+				"GL_MAX_INTEGER_SAMPLES",
+				"GL_MAX_PROGRAM_TEXTURE_GATHER_OFFSET",
+				"GL_MAX_SAMPLE_MASK_WORDS",
+				"GL_MAX_SHADER_STORAGE_BLOCK_SIZE",
+				"GL_MAX_SHADER_STORAGE_BUFFER_BINDINGS",
+				"GL_MAX_UNIFORM_LOCATIONS",
+				"GL_MAX_VERTEX_ATOMIC_COUNTERS",
+				"GL_MAX_VERTEX_ATOMIC_COUNTER_BUFFERS",
+				"GL_MAX_VERTEX_ATTRIB_BINDINGS",
+				"GL_MAX_VERTEX_ATTRIB_RELATIVE_OFFSET",
+				"GL_MAX_VERTEX_ATTRIB_STRIDE",
+				"GL_MAX_VERTEX_IMAGE_UNIFORMS",
+				"GL_MAX_VERTEX_SHADER_STORAGE_BLOCKS"
+		};
+
+		IntBuffer capsValue = IntBuffer.allocate(2);
+
+		for (int i = 0; i < enums.length; i++) {
+			// Array caps
+			if ((enums[i] == GLES31.GL_MAX_COMPUTE_WORK_GROUP_COUNT) || (enums[i] == GLES31.GL_MAX_COMPUTE_WORK_GROUP_SIZE)) {
+				int[] values = new int[3];
+				for (int j = 0; j < 3; j++) {
+					GLES31.glGetIntegeri_v(enums[i], j, values, j);
+				}
+				if (GLES31.glGetError() == GLES31.GL_NO_ERROR) {
+					mGLES31Caps.add(capNames[i], capDisplayNames[i], String.valueOf(values[0]) + " x " + String.valueOf(values[1]) + " x " + String.valueOf(values[2]));
+				} else {
+					mGLES31Caps.add(capNames[i], capDisplayNames[i], "unknown");
+				}
+			} else {
+				GLES31.glGetIntegerv(enums[i], (IntBuffer) capsValue.rewind());
+				if (GLES31.glGetError() == GLES31.GL_NO_ERROR) {
+					mGLES31Caps.add(capNames[i], capDisplayNames[i], String.valueOf(capsValue.get(0)));
+				} else {
+					mGLES31Caps.add(capNames[i], capDisplayNames[i], "unknown");
+				}
+			}
+		}
+
+	}
 	
 	// Get OpenGL information of current implementation
 	public void getOpenGLImplementationInfo() {
@@ -822,8 +1006,12 @@ class GLESInfo {
 		if (mMajorVersion >= 2) 
 			getOpenGLES20Caps();
 		
-		if (mMajorVersion >= 3)
+		if (mMajorVersion >= 3) {
 			getOpenGLES30Caps();
+			if (mMinorVersion >= 1) {
+				getOpenGLES31Caps();
+			}
+		}
 
 		// Available compressed texture formats
 		GLES20.glGetIntegerv(GLES20.GL_NUM_COMPRESSED_TEXTURE_FORMATS, (IntBuffer)GLintVal.rewind());

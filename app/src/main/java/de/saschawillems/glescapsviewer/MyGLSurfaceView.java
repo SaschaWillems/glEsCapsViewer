@@ -2,7 +2,7 @@
 *
 * OpenGL ES hardware capability viewer and database
 *
-* Copyright (C) 2011-2015 by Sascha Willems (www.saschawillems.de)
+* Copyright (C) 2011-2018 by Sascha Willems (www.saschawillems.de)
 *
 * This code is free software, you can redistribute it and/or
 * modify it under the terms of the GNU Lesser General Public
@@ -223,7 +223,17 @@ class GLES20Renderer implements GLSurfaceView.Renderer {
         } else {
             addTableContent(mTableLayout, "OpenGL ES 3.0 not supported", "", Color.GRAY);       	        	
         }
-        
+		// GL ES 3.1
+		addNewTableRow(mTableLayout, "", "", false);
+		addNewTableRow(mTableLayout, "OpenGL ES 3.1 Caps", "", true);
+		if (mGLESInfo.mGLES31Caps.values.size() > 0) {
+			for (int i=0; i < mGLESInfo.mGLES31Caps.values.size(); ++i) {
+				addTableContent(mTableLayout, mGLESInfo.mGLES31Caps.displayNames.get(i), mGLESInfo.mGLES31Caps.values.get(i), Color.WHITE);
+			}
+		} else {
+			addTableContent(mTableLayout, "OpenGL ES 3.1 not supported", "", Color.GRAY);
+		}
+
         // EGL implementation
         if (mGLESInfo.mEGLAvailable) {
             // EGL implementation
