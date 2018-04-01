@@ -233,6 +233,16 @@ class GLES20Renderer implements GLSurfaceView.Renderer {
 		} else {
 			addTableContent(mTableLayout, "OpenGL ES 3.1 not supported", "", Color.GRAY);
 		}
+		// GL ES 3.2
+		addNewTableRow(mTableLayout, "", "", false);
+		addNewTableRow(mTableLayout, "OpenGL ES 3.2 Caps", "", true);
+		if (mGLESInfo.mGLES31Caps.values.size() > 0) {
+			for (int i=0; i < mGLESInfo.mGLES32Caps.values.size(); ++i) {
+				addTableContent(mTableLayout, mGLESInfo.mGLES32Caps.displayNames.get(i), mGLESInfo.mGLES32Caps.values.get(i), Color.WHITE);
+			}
+		} else {
+			addTableContent(mTableLayout, "OpenGL ES 3.2 not supported", "", Color.GRAY);
+		}
 
         // EGL implementation
         if (mGLESInfo.mEGLAvailable) {
