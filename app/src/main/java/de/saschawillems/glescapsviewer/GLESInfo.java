@@ -967,11 +967,11 @@ class GLESInfo {
 				int[] values = new int[3];
 				for (int j = 0; j < 3; j++) {
 					GLES31.glGetIntegeri_v(enums[i], j, values, j);
-				}
-				if (GLES31.glGetError() == GLES31.GL_NO_ERROR) {
-					mGLES31Caps.add(capNames[i], capDisplayNames[i], String.valueOf(values[0]) + " x " + String.valueOf(values[1]) + " x " + String.valueOf(values[2]));
-				} else {
-					mGLES31Caps.add(capNames[i], capDisplayNames[i], "unknown");
+					if (GLES31.glGetError() == GLES31.GL_NO_ERROR) {
+						mGLES31Caps.add(capNames[i] + "[" + String.valueOf(j) + "]", capDisplayNames[i] + "[" + String.valueOf(j) + "]", String.valueOf(values[j]));
+					} else {
+						mGLES31Caps.add(capNames[i] + "[" + String.valueOf(j) + "]", capDisplayNames[i] + "[" + String.valueOf(j) + "]", "unknown");
+					}
 				}
 			} else {
 				GLES31.glGetIntegerv(enums[i], (IntBuffer) capsValue.rewind());
