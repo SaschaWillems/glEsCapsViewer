@@ -125,6 +125,8 @@ class ESCaps {
 }
 
 class GLESInfo {
+	public int mReportVersion = 6;
+
 	public String mRenderer = "none";
 	public String mVersion = "none";
 	public String mVendor = "none";
@@ -1345,6 +1347,7 @@ class GLESInfo {
             xmlSerializer.startTag(null, "report");
             xmlSerializer.attribute(null, "submitter", submitter);
             xmlSerializer.attribute(null, "description", deviceDescription());
+			xmlSerializer.attribute(null, "reportversion", String.valueOf(mReportVersion));
 
             // Device
             xmlSerializer.startTag(null, "device");
