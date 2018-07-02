@@ -27,6 +27,26 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
+                <LinearLayout android:id="@+id/buttoncontainer"
+                    android:orientation="horizontal"
+                    android:visibility="gone"
+                    android:gravity="center"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Upload"
+                        android:id="@+id/uploadButton"
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="About"
+                        android:id="@+id/aboutButton"
+                        />
+                </LinearLayout>
+
                 <TableLayout
                     android:id="@+id/tableLayout"
                     android:layout_width="match_parent"
