@@ -4,6 +4,6 @@
     <string name="app_name">OpenGL ES Hardware Caps Viewer</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_gl">OpenGL ES Hardware Caps Viewer</string>
-    <string name="about_credits">Version 0.6\n\nCopyright © 2013-2018 by Sascha Willems\n\nhttps://www.saschawillems.de\nhttps://opengles.gpuinfo.org\n\nOpenGL is a registered trademark and the OpenGL ES logo is a trademark of Silicon Graphics Inc. used by permission by Khronos. </string>
+    <string name="about_credits">Version 0.7\n\nCopyright © 2013-2023 by Sascha Willems\n\nhttps://www.saschawillems.de\nhttps://opengles.gpuinfo.org\n\nOpenGL is a registered trademark and the OpenGL ES logo is a trademark of Silicon Graphics Inc. used by permission by Khronos. </string>
 
 </resources>

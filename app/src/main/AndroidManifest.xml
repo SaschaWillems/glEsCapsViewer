@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="de.saschawillems.glescapsviewer"
-    android:versionCode="6"
-    android:versionName="0.6" >
+    android:versionCode="7"
+    android:versionName="0.7" >
 
     <uses-sdk
-        android:minSdkVersion="18"
-        android:targetSdkVersion="25" />
+        android:minSdkVersion="31"
+        android:targetSdkVersion="31" />
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
@@ -23,7 +23,8 @@
         <activity
             android:name="de.saschawillems.glescapsviewer.GLActivity"
             android:label="@string/title_activity_gl"
-            android:uiOptions="splitActionBarWhenNarrow">
+            android:uiOptions="splitActionBarWhenNarrow"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
