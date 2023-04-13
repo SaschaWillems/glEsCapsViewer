@@ -53,7 +53,7 @@ public class GLActivity extends Activity implements PropertyChangeListener {
     public static GLESInfo mGLESInfo;
     private GLES20Renderer mRenderer;
 
-    public static String baseURL = "http://opengles.gpuinfo.org";
+    public static String baseURL = "https://opengles.gpuinfo.org";
     
     private Context mContext;
      
