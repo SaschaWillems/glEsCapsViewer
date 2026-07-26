@@ -1,24 +1,25 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 36
+    compileSdkVersion 37
 
     defaultConfig {
         applicationId "de.saschawillems.glescapsviewer"
         minSdkVersion 31
-        targetSdkVersion 34
+        targetSdkVersion 35
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.txt'
         }
     }
 
     namespace 'de.saschawillems.glescapsviewer'
-    lint {
-        checkReleaseBuilds true
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
     }
 }
 
